@@ -6,9 +6,12 @@ walkthrough and code to create a hugo website with smartfigure integration, this
 
 ## 2 clone/download this repository
 
-# Run the create_website.r file
+# Run the createwebsite.r file
 
 This will create a website using the academic template.
+
+Note that it will need to upgrade or downgrade your hugo installation.
+(you can use blogdown::install_hugo(version ="xxx", force =TRUE, use_brew = FALSE)) to come back to a different hugo version.)
 
 # step 3 Add project and people information
 
