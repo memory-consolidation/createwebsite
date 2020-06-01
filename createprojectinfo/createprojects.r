@@ -32,7 +32,11 @@ people_sfb = people_sfb2 %>%
   mutate (homepage = ifelse (is.na(lablink_fo), homepage, lablink_fo)) %>%
   mutate (avatar = ifelse (is.na(picturelink_fo),avatar ,picturelink_fo))%>%
   #mutate (people_code = ifelse (!is.na(people_code_orcid), people_code_orcid,peoplecode))%>%
-  mutate (people_code = paste0("sfb-",gsub("[^a-zA-Z0-9]", "",people_code)))
+  mutate (people_code = paste0("sfb-",gsub("[^a-zA-Z0-9]", "",people_code))) %>%
+  mutate (avatar= ifelse (grepl(".jpg",avatar),avatar,NA))
+  
+
+# get avatar out if not an jpg image
 
 
 View(people_sfb)
@@ -142,7 +146,7 @@ for (i in c(1: nrow(update))){
   
   # add default avatar image if none present:
   if (!file.exists(paste0(pdirectory,"/avatar.jpg"))){
-    file.copy ("automation_websiteelementscreation/avatar.jpg",
+    file.copy ("avatar.jpg",
                paste0(pdirectory,"/avatar.jpg"))
   }
   
