@@ -16,7 +16,7 @@ height = ""
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
-  title = "Mechanisms and disturbances in memory consolidation: from synapses to systems"
+  title = "LAB NAME"
   content = ""
   align = "center"  # Choose `center`, `left`, or `right`.
 
@@ -29,41 +29,15 @@ height = ""
   # Call to action button (optional).
   #   Activate the button by specifying a URL and button label below.
   #   Deactivate by commenting out parameters, prefixing lines with `#`.
-  cta_label = "SFB1315 official webpage"
-  cta_url = "https://www.biologie.hu-berlin.de/en/gruppenseiten-en/sfb1315"
+  cta_label = "LABHEAD CV"
+  cta_url = "/authors/LABHEAD"
   cta_icon_pack = "fas"
   cta_icon = "graduation-cap"
 
-[[item]]
-  title = "Our data is on GIN"
-  content = ""
-  align = "center"
 
-  overlay_color = "#555"  # An HTML color value.
-  overlay_img = ""  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
-  
-  cta_label = "Login to our Gin instance"
-  cta_url = "/data_gin/"
-  cta_icon_pack = "fas"
-  cta_icon = "sign-in-alt"
-  
-[[item]]
-  title = "Open protocols "
-  content = ""
-  align = "center"
-
-  overlay_color = "#555"  # An HTML color value.
-  overlay_img = ""  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
-  
-  cta_label = "link"
-  cta_url = "/protocols/"
-  cta_icon_pack = "fas"
-  cta_icon = "book"  
 
 [[item]]
-  title = "Open source software "
+  title = "Consortium participations"
   content = ""
   align = "center"
 
@@ -72,22 +46,9 @@ height = ""
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
   
   cta_label = "Link"
-  cta_url = "/FOSS/"
+  cta_url = "/communities/"
   cta_icon_pack = "fas"
   cta_icon = "laptop-code"    
   
-[[item]]
-  title = "Reagents"
-  content = ""
-  align = "center"
-
-  overlay_color = "#555"  # An HTML color value.
-  overlay_img = ""  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
-  
-  cta_label = "Link"
-  cta_url = "/reagents/"
-  cta_icon_pack = "fas"
-  cta_icon = "vial"   
 
 +++
