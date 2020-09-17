@@ -1,10 +1,10 @@
 # serve website:
-HUGO_VERSION = "0.68.3"
+HUGO_VERSION = "0.75.1"
 if (blogdown::hugo_version() != HUGO_VERSION) blogdown::install_hugo(version =HUGO_VERSION, force =TRUE, use_brew = FALSE)
 
 setwd("website")
 blogdown::serve_site()
-setwd("../createwebsitefromscratch")
+setwd("../createprojectinfo")
 ###--------
 source ("funct-dependencies.r")
 
@@ -33,13 +33,13 @@ people_sfb = people_sfb2 %>%
   mutate (avatar = ifelse (is.na(picturelink_fo),avatar ,picturelink_fo))%>%
   #mutate (people_code = ifelse (!is.na(people_code_orcid), people_code_orcid,peoplecode))%>%
   mutate (people_code = paste0("sfb-",gsub("[^a-zA-Z0-9]", "",people_code))) %>%
-  mutate (avatar= ifelse (grepl(".jpg",avatar),avatar,NA))
+  mutate (avatar= ifelse (grepl(".jpg",avatar),avatar,""))
   
 
 # get avatar out if not an jpg image
 
 
-View(people_sfb)
+#View(people_sfb)
 
 
 
@@ -84,7 +84,8 @@ for (i in c(1: nrow(projects))){
 
 
 
-update = people_sfb #%>% filter (people_code != "") #%>% filter(update == "yes")
+update =  as.data.frame(people_sfb) #%>% filter (people_code != "") #%>% filter(update == "yes")
+
 update[is.na(update)] <- ""
 
 p_template =  readLines("authors_template.md")
@@ -192,7 +193,7 @@ featureimage <- function(project,people_sfb = people,   heightfeature = 230,
   imagemain = image_blank (widthfeature-Pwidth-2*border, heightfeature-2*border)
   if (file.exists(paste0("projectsimages/", project,".png"))) {
     imagemain=
-      paste0(seafilefolder,"projectsimages/", project,".png") %>%
+      paste0("projectsimages/", project,".png") %>%
       image_read() %>%
       image_resize(paste0(widthfeature-Pwidth-2*border,"x", heightfeature-2*border)) %>%
       image_extent (paste0(widthfeature-Pwidth-2*border,"x", heightfeature-2*border), gravity = "Center")%>%
