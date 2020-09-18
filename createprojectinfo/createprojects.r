@@ -2,9 +2,7 @@
 HUGO_VERSION = "0.75.1"
 if (blogdown::hugo_version() != HUGO_VERSION) blogdown::install_hugo(version =HUGO_VERSION, force =TRUE, use_brew = FALSE)
 
-setwd("website")
-blogdown::serve_site()
-setwd("../createprojectinfo")
+setwd("createprojectinfo")
 ###--------
 source ("funct-dependencies.r")
 
@@ -244,3 +242,4 @@ for (theproject in substring (projects$hash,9)) {
 #
 # paste0( '"',paste0(peoproj, collapse = '","'), '"')
 #
+setwd(../")

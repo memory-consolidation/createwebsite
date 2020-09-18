@@ -29,10 +29,11 @@ file.rename("layouts", "website/layouts")
 file.rename("website/content/project", "trash/project")
 dir.create("website/content/project")
 
-blogdown::stop_server()
-setwd("website")
-blogdown::build_site()
-blogdown::serve_site()
-setwd("../")
+# # run website
+# blogdown::stop_server()
+# setwd("website")
+# blogdown::build_site()
+# blogdown::serve_site()
+# setwd("../")
 
 #file.rename( "trash", "website/content/home", recursive=TRUE)
