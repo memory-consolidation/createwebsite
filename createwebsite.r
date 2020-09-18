@@ -29,6 +29,15 @@ file.rename("layouts", "website/layouts")
 file.rename("website/content/project", "trash/project")
 dir.create("website/content/project")
 
+file.rename("website/config/_default/menus.toml", "trash/menus.toml")
+file.rename("website_individualisation/menus.toml", "website/config/_default/menus.toml")
+
+
+
+## change website name:
+
+
+
 # # run website
 # blogdown::stop_server()
 # setwd("website")

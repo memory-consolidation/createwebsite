@@ -1,6 +1,24 @@
-# serve website:
-HUGO_VERSION = "0.75.1"
-if (blogdown::hugo_version() != HUGO_VERSION) blogdown::install_hugo(version =HUGO_VERSION, force =TRUE, use_brew = FALSE)
+### This whole section will be replaced by smartfigure gallery API calls eventually
+
+##INPUTS:
+
+##get folder with the information sheets
+
+projects<- read_delim("projectlist.csv",
+                      ",", trim_ws = TRUE, skip = 1, na=character())
+
+people<- read_delim("peoplelist.csv",
+                    ",", trim_ws = TRUE, skip = 0, na=c("", "NA"))
+
+Sitename = "yourteamname"
+
+
+### code
+
+S1=read_lines("website/config.toml")
+S1[10] = paste0("title = \"",Sitename,"\"" )
+write_lines(S1,"website/config.toml")
+
 
 setwd("createprojectinfo")
 ###--------
@@ -8,13 +26,7 @@ source ("funct-dependencies.r")
 
 
 ###----------------------------------PROJECTS--PROJECTS--projects(with links to people)--
-##get folder with the information sheets
 
-projects<- read_delim("projectlist.csv",
-                       ",", trim_ws = TRUE, skip = 1, na=character())
-
-people<- read_delim("peoplelist.csv",
-                         ",", trim_ws = TRUE, skip = 0, na=c("", "NA"))
 
 ##  get orcid information:
 orcidlist1 = expandorcid(unique(people$orcidnum[!is.na (people$orcidnum)]))
